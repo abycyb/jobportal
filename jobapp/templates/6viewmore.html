@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+            crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/c921f6465b.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include '8navbar.html' %}<br>
+<center>
+    <h1 style="color:blue">Apply Here</h1>
+
+    <div class="col-sm-12 col-md-6 col-lg-4" style="margin-top:8rem;">
+        <div class="card" style="width: 18rem;background-color:green;">
+            <div class="card-body" style="color:White">
+
+                <h5 class="card-title">Job role :{{a1.jtitle}}</h5>
+                <p class="card-text">Company Name :{{a1.cname}}</p>
+
+                <p class="card-text">Email :{{a1.email}}</p>
+
+                <p class="card-text">work type :{{a1.wtype}}</p>
+                <p class="card-text">Experience required :{{a1.expreq}}</p>
+                <p class="card-text">Job type :{{a1.jtype}}</p>
+
+            </div>
+        </div>
+        <br>
+        <a href="/viewjob/" class="btn btn-danger">back to jobs page</a>
+        <a href="/applynow/{{a1.id}}/{{b1.id}}" class="btn btn-warning" >Apply now</a>
+    </div>
+</center>
+</body>
+</html>

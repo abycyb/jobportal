@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/c921f6465b.js" crossorigin="anonymous"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+
+        #a
+        {
+            height:100px;
+            width:300px;
+            background-color: ;
+
+        }
+        #b
+        {
+            height:200px;
+            width:300px;
+            background-color: rgb(255, 255, 255);
+            border-style:ridge;
+            border-width: thin;
+            border-radius:5px;
+        }
+        #c
+        {
+            height:50px;
+            width:300px;
+            background-color: rgb(255, 255, 255);
+            border-style:ridge;
+            border-width: thin;
+            border-radius:5px;
+        }
+        #b1
+        {
+            height:150px;
+            width:250px;
+            margin-top: 10%;
+            text-align: left;
+        }
+        a:link
+        {
+            text-decoration: none;
+        }
+
+
+
+
+
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--<div style="float:right">-->
+<!--    <button class="btn btn-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"-->
+<!--            aria-controls="offcanvasWithBothOptions"><i class="fa-solid fa-bars"></i>-->
+<!--    </button>-->
+<!--    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"-->
+<!--         aria-labelledby="offcanvasWithBothOptionsLabel">-->
+<!--        <div class="offcanvas-header">-->
+<!--            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">HOME</h5>-->
+<!--            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>-->
+<!--        </div>-->
+<!--        <div class="offcanvas-body">-->
+<!--            <a href="http://127.0.0.1:8000/job_app/index/       ">Index</a><br>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+{% include '8navbar.html' %}
+
+<center style="background-color:background: rgb(44,117,200);
+background: linear-gradient(0deg, rgba(44,117,200,1) 40%, rgba(21,176,187,1) 100%);">
+    <br>
+    <div id="a">
+        <p id="a2" style="font-size:40px">Log In</p>
+    </div>
+
+    <form method="post">{% csrf_token %}
+
+        <div id="b">
+
+            <div id="b1">
+
+                <label style="font-family: sans-serif;">Username/Email</label><br>
+                <input type="text" name="email"
+                       style="width:100%;height:20px;border-radius:4px;border-width: thin;margin-top: 2px;margin-bottom: 7px;"
+                       required><br>
+                <label style="font-family: sans-serif;">Password</label>
+                <a href="" style="font-family: sans-serif;float:right">Forgot Password?</a><br>
+                <input type="password" name="password"
+                       style="width:100%;height:20px;border-radius:4px;border-width: thin;margin-top: 2px;"
+                       required><br><br>
+                <input type="submit" value="Log In"
+                       style="color:white;background-color:rgb(29, 173, 29);width:100%;height:30px;border-radius:4px;border-width: 0ch;">
+            </div>
+        </div>
+    </form>
+
+    <br>
+    <div id="c">
+        <div style="margin:4%;">
+            <label>New here ?</label>
+            <a href="/compreg" style="font-family:sans-serif">Create an Account.</a>
+        </div>
+    </div>
+    <br><br><br>
+</center>
+<center><br>
+    <div>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="">Terms</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="">Privacy</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="">Security</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="">Contact </a>&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+</center>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-danger" style="text-align:center">
+                {{ message }}
+            </div>
+            <li {% if message.tags %} class="{{ message.tags }}" {% endif %}></li>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>

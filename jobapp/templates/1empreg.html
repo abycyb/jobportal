@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include '8navbar.html' %}<br><br>
+<form method="post">{% csrf_token %}
+    <center><h1>Employee Registration</h1><br></center>
+
+    <div style="display:flex;justify-content:center;align-items:center;"><br>
+        <div style="border-style:ridge;width:550px;display:flex;justify-content:center;align-items:center;">
+            <div style="margin:10%;width:400px;">
+                <div style="font-size:20px;float:left;">
+                    USERNAME <br>
+                    EMAIL <br>
+                    DOB <br>
+                    QUALIFICATION <br>
+                    PH NO <br>
+                    PASSWORD <br>
+                    CONFIRM PASSWORD <br>
+                </div>
+                <div style="float:right">
+                    <input type="text" name="username" placeholder="username_123" required><br>
+                    <input type="email" name="email" placeholder="xyz.email.com" required><br>
+
+                    <input type="date" name="dd-mm-yy" required><br>
+                    <input type="text" name="quali" placeholder="B.tech" required><br>
+                    <input type="number" name="phno" placeholder="9451521561" required><br>
+
+                    <input type="password" name="password" placeholder="*****" required><br>
+                    <input type="password" name="cpassword" placeholder="*****" required>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <center>
+        <br>
+        <div style="width:50%">
+            <input style="background-color:black;color:white" type="submit" value="register">
+        </div>
+    </center>
+</form>
+</body>
+</html>
